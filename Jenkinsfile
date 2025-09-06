@@ -17,8 +17,8 @@ pipeline {
             steps {
                 echo 'Running Docker container...'
                 sh '''
-                docker stop my-web-app || true
-                docker rm my-web-app || true
+                docker stop my-web-app
+                docker rm my-web-app
                 docker run -d --name my-web-app -p 8090:80 my-web-app
                 '''
             }
